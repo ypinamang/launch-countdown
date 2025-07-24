@@ -18,7 +18,7 @@ function pause(seconds) {
 
 async function performCountDown() {
     for (let i = numberInSeconds; i > 0; i--) {
-        counter.textContent = i;
+        counter.textContent = i - 1;
         await pause(ONE_SECOND);
         
     }
