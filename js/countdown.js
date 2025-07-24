@@ -2,29 +2,33 @@ const ONE_SECOND = 1000;
 
 const counter = document.querySelector(".counter");
 const counterInput = document.querySelector(".user-input");
-const clapSound = document.querySelector("#clap-sound");
+const counterButton = document.querySelector(".counter-btn");
 
 counterInput.focus();
 
-
-function getCounterValue(counter) {
-    return parseInt(counter.textContent);
+function getCounter(value) {
+    return parseInt(value);
 }
-
-const numberInSeconds = getCounterValue(counter);
 
 function pause(seconds) {
     return new Promise(resolve => setTimeout(resolve, seconds));
 }
 
-async function performCountDown() {
-    
-    for (let i = numberInSeconds; i > 0; i--) {
+counterButton.addEventListener("click", async function () {
+    counterInput.value = "";
+    let countDownFrom;
+    if (counterInput.value == ""){
+         countDownFrom = getCounter(counter.textContent);
+    } else {
+         countDownFrom = getCounter(counterInput.value);
+    }
+
+    for (i = countDownFrom; i > 0; i--) {
         counter.textContent = i - 1;
         await pause(ONE_SECOND);
-        
     }
-}
+})
+
 
 
 
