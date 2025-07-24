@@ -1,9 +1,10 @@
 const ONE_SECOND = 1000;
-const counter = document.querySelector(".counter");
 
+const counter = document.querySelector(".counter");
+const counterInput = document.querySelector(".user-input");
 const clapSound = document.querySelector("#clap-sound");
 
-counter.addEventListener("click", performCountDown);
+counterInput.focus();
 
 
 function getCounterValue(counter) {
@@ -17,12 +18,12 @@ function pause(seconds) {
 }
 
 async function performCountDown() {
+    
     for (let i = numberInSeconds; i > 0; i--) {
         counter.textContent = i - 1;
         await pause(ONE_SECOND);
         
     }
-    clapSound.play();
 }
 
 
