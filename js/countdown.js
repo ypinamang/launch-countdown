@@ -23,11 +23,13 @@ counterButton.addEventListener("click", async function () {
     }
     
     counterInput.value = "";
+    counterButton.style.display = "none";
 
     for (i = countDownFrom; i >= 0; i--) {
         counter.textContent = i;
         await pause(ONE_SECOND);
     }
+    counterButton.style.display = "block";
 })
 
 
