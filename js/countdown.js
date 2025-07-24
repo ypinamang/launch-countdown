@@ -15,16 +15,17 @@ function pause(seconds) {
 }
 
 counterButton.addEventListener("click", async function () {
-    counterInput.value = "";
     let countDownFrom;
     if (counterInput.value == ""){
          countDownFrom = getCounter(counter.textContent);
     } else {
          countDownFrom = getCounter(counterInput.value);
     }
+    
+    counterInput.value = "";
 
-    for (i = countDownFrom; i > 0; i--) {
-        counter.textContent = i - 1;
+    for (i = countDownFrom; i >= 0; i--) {
+        counter.textContent = i;
         await pause(ONE_SECOND);
     }
 })
