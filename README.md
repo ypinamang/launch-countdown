@@ -1,2 +1,2 @@
 # launch-countdown
-Implementation of a simple launch countdown that starts at n seconds
+Implementation of a countdown timer that starts at n seconds. Uses async/await with a Promise to implement visible countdown.
