@@ -3,6 +3,7 @@ const ONE_SECOND = 1000;
 const counter = document.querySelector(".counter");
 const counterInput = document.querySelector(".user-input");
 const counterButton = document.querySelector(".counter-btn");
+const bellSound = document.querySelector("#bell-sound");
 
 counterInput.focus();
 
@@ -29,6 +30,7 @@ counterButton.addEventListener("click", async function () {
         counter.textContent = i;
         await pause(ONE_SECOND);
     }
+    bellSound.play();
     counterButton.style.display = "block";
 })
 
