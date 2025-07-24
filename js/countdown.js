@@ -24,6 +24,7 @@ counterButton.addEventListener("click", async function () {
     }
     
     counterInput.value = "";
+    counterInput.style.display = "none";
     counterButton.style.display = "none";
 
     for (i = countDownFrom; i >= 0; i--) {
@@ -31,6 +32,7 @@ counterButton.addEventListener("click", async function () {
         await pause(ONE_SECOND);
     }
     bellSound.play();
+    counterInput.style.display = "block";
     counterButton.style.display = "block";
 })
 
