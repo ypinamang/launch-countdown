@@ -36,8 +36,12 @@ counterButton.addEventListener("click", async function () {
     counterButton.style.display = "block";
 })
 
-
-
+counterInput.addEventListener("keypress", function (event) {
+    if (event.key == "Enter") {
+        event.preventDefault();
+        counterButton.click();
+    }
+})
 
 
 
